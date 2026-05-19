@@ -12,8 +12,31 @@ public class Karma : MonoBehaviour
 
     void Start()
     {
-        
+
     }
+
+
+    public void AccionesBuenas()
+    {
+        karmaPlayer += accionesBuenas;
+        karmaPlayer = Mathf.Clamp(karmaPlayer, karmaMin, karmaMax);
+        Debug.Log("Accion mala, karma actual: " + karmaPlayer);
+    }
+
+    public void AccionesNeutras()
+    {
+        karmaPlayer += accionesNeutras;
+        karmaPlayer = Mathf.Clamp(karmaPlayer, karmaMin, karmaMax);
+        Debug.Log("Accion neutra, karma actual: " + karmaPlayer);
+    }
+
+    public void AccionesMalas()
+    {
+        karmaPlayer += accionesMalas;
+        karmaPlayer = Mathf.Clamp(karmaPlayer, karmaMin, karmaMax);
+        Debug.Log("Accion mala, karma actual: " + karmaPlayer);
+    }
+
 
     void Update()
     {
