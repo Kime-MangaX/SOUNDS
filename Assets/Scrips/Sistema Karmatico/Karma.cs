@@ -15,7 +15,6 @@ public class Karma : MonoBehaviour
 
     }
 
-
     public void AccionesBuenas()
     {
         karmaPlayer += accionesBuenas;
