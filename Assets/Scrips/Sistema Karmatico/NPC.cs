@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
+
+
     void Start()
     {
         
@@ -11,4 +13,6 @@ public class NPC : MonoBehaviour
     {
         
     }
+
+
 }
