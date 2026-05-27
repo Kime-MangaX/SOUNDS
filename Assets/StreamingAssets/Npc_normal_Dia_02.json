@@ -1,0 +1,92 @@
+json
+
+{
+  "npcID": "Npc_normal_Dia_02",
+  "dialogos": [
+  {
+    "id": 0,
+    "npcTexto": "...",
+    "respuestas": {
+     "buena": {
+      "textoBoton": "...",
+      "npcRespuesta": "..."
+     },
+
+     "neutra": {
+     "textoBoton": "..."
+     "npcRespuesta": "...."
+     },
+
+     "mala": {
+     "TextoBoton": "...."
+     "npcRespuesta": "..."
+     }
+    }
+   },
+
+   {
+     "id": 1,
+     "npcTexto": "...",
+     "respuestas": {
+      "buena": {
+      "TextoBoton": "...",
+      "npcRespuesta": "..."
+      },
+
+      "neutra": {
+      "TextoBoton": "...",
+      "npcRespuesta": "..."
+      },
+
+      "mala": {
+      "TextoBoton": "...",
+      "npcRespuesta" "..."
+      },
+     }
+   },
+
+   {
+     "id": 2,
+     "npcTexto": "...",
+     "respuestas": {
+      "buena": {
+      "TextoBoton": "....",
+      "npcRespuesta": "...."
+      },
+
+      "neutra": {
+      "TextoBoton": "...",
+      "npcRespuesta": "..."
+      },
+
+      "mala": {
+      "TextoBoton": "...",
+      "npcRespuesta" "..."
+      },
+     }
+   },
+
+   {
+     "id": 3,
+     "npcTexto": "...",
+     "respuestas": {
+      "buena": {
+      "TextoBoton": "...",
+      "npcRespuesta": "..."
+      },
+
+      "neutra": {
+      "TextoBoton": "...",
+      "npcRespuesta": "..."
+      },
+
+      "mala": {
+      "TextoBoton": "...",
+      "npcRespuesta" "..."
+      },
+     }
+   }
+  ]
+
+
+}
