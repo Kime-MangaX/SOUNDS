@@ -10,19 +10,13 @@ public class Karma : MonoBehaviour
     public int karmaMax = 60;
     public int karmaMin = 0;
 
-
-
-
-    void Start()
-    {
-
-    }
+    void Start() { }
 
     public void AccionesBuenas()
     {
         karmaPlayer += accionesBuenas;
         karmaPlayer = Mathf.Clamp(karmaPlayer, karmaMin, karmaMax);
-        Debug.Log("Accion mala, karma actual: " + karmaPlayer);
+        Debug.Log("Accion buena, karma actual: " + karmaPlayer); 
     }
 
     public void AccionesNeutras()
@@ -34,13 +28,13 @@ public class Karma : MonoBehaviour
 
     public void AccionesMalas()
     {
-        karmaPlayer -= accionesMalas;
+        karmaPlayer += accionesMalas; 
         karmaPlayer = Mathf.Clamp(karmaPlayer, karmaMin, karmaMax);
         Debug.Log("Accion mala, karma actual: " + karmaPlayer);
     }
 
-    void Update()
+    void Update() 
     {
-
+    
     }
 }
