@@ -1,0 +1,92 @@
+json
+
+{
+  "npcID": "Npc_normal_01",
+  "dialogos": [
+  {
+    "id": 0,
+    "npcTexto": "¿Quién eres tú? No te había visto antes por aquí...",
+    "respuestas": {
+     "buena": {
+      "textoBoton": "Estoy de paso, no te haré daño.",
+      "npcRespuesta": "Hmm... está bien. Ten cuidado por este lugar."
+     },
+
+     "neutra": {
+     "textoBoton": "No es de tu incumbencia."
+     "npcRespuesta": "...Como quieras."
+     },
+
+     "mala": {
+     "TextoBoton": "Largate."
+     "npcRespuesta": "..."
+     }
+    }
+   },
+
+   {
+     "id": 1,
+     "npcTexto": "Este lugar no es seguro de noche. ¿A dónde vas?",
+     "respuestas": {
+      "buena": {
+      "TextoBoton": "Solo es trabajo, no se preocupe.",
+      "npcRespuesta": "Esta bien, suerte ¡Adios!"
+      },
+
+      "neutra": {
+      "TextoBoton": "Solo estoy de paso.",
+      "npcRespuesta": "Bien, pero tencuidado."
+      },
+
+      "mala": {
+      "TextoBoton": "Que te importa.",
+      "npcRespuesta" "..."
+      },
+     }
+   },
+
+   {
+     "id": 2,
+     "npcTexto": "Tienes mala pinta, ¿Estas bien?",
+     "respuestas": {
+      "buena": {
+      "TextoBoton": "No es nada, no se preocupe.",
+      "npcRespuesta": "Lo que usted diga."
+      },
+
+      "neutra": {
+      "TextoBoton": "No te incumbe.",
+      "npcRespuesta": "Y uno que se preocupa"
+      },
+
+      "mala": {
+      "TextoBoton": "[Ignorar]",
+      "npcRespuesta" "..."
+      },
+     }
+   },
+
+   {
+     "id": 3,
+     "npcTexto": "¡Un Shinseina Hari! ¿Estas trabajando?",
+     "respuestas": {
+      "buena": {
+      "TextoBoton": "Si, compermiso.",
+      "npcRespuesta": "No te distraigo más."
+      },
+
+      "neutra": {
+      "TextoBoton": "No puedo decirlo.",
+      "npcRespuesta": "Entiendo."
+      },
+
+      "mala": {
+      "TextoBoton": "[Ignorar]",
+      "npcRespuesta" "..."
+      },
+     }
+   }
+  ]
+
+
+}
