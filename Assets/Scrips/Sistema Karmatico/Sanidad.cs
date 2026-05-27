@@ -35,7 +35,7 @@ public class Sanidad : MonoBehaviour
     {
         if (sanityPlayer == 0)
         {
-            void GameOver();
+           GameOver();
         }
 
         else if (sanityPlayer <= 10)
