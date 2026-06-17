@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
-  m_Name: 10MatildaDIalogo2
+  m_Name: NPC3
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: Que grosero de tu parte!
+  Dialogo: 
   Options: []
