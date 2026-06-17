@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: Malo
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
+  Dialogo: "\u2014Qu\xE9 grosera\u2026 *(se aleja murmurando)* "
   Options: []

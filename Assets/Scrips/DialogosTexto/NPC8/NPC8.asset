@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC8
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014\xBFNo te sientes culpable?"
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014Largo."
+    NextNode: {fileID: 11400000, guid: 754a0668a16b8864eb01d24cf107846e, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014[Ignorar]"
+    NextNode: {fileID: 11400000, guid: 7d5a0d8c5c8beab4d913374ab86f907d, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014\xBFA qu\xE9 te refieres?"
+    NextNode: {fileID: 11400000, guid: d484a04b3f23ab842ad2931aa3b4b23a, type: 2}

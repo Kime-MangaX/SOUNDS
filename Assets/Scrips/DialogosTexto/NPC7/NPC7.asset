@@ -19,12 +19,12 @@ MonoBehaviour:
   - KarmaValue: -5
     SanidadValue: -5
     OptionText: "\u2014\xBFY por qu\xE9 no lo hace usted? \xBFAcaso piensa, idiota?"
-    NextNode: {fileID: 0}
+    NextNode: {fileID: 11400000, guid: 68e68488fb2e926418c9a9b2d4acc8b2, type: 2}
   - KarmaValue: 1
     SanidadValue: 0
     OptionText: "\u2014[Ignorar]"
-    NextNode: {fileID: 0}
+    NextNode: {fileID: 11400000, guid: 296231afc09d5a4429f9c8a862bbac87, type: 2}
   - KarmaValue: 3
     SanidadValue: 5
     OptionText: "\u2014Eso es algo que se sale de mis manos."
-    NextNode: {fileID: 0}
+    NextNode: {fileID: 11400000, guid: 59b1deb4e8277c745aa4865bcd371a89, type: 2}

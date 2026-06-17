@@ -1,12 +1,12 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class BaseNPC : MonoBehaviour
 {
     public DialogNode StartetNode;
-    public DialogNode currentNode;
     void Start()
     {
-        currentNode = StartetNode;
+        
     }
 
     // Update is called once per frame
@@ -14,8 +14,9 @@ public class BaseNPC : MonoBehaviour
     {
         
     }
-    public void DialogOption(int value)
+    [Button]
+    public void DialogOption()
     {
-        currentNode = currentNode.Options[value].NextNode;
+       GameManager.Instance.DialogManagerUI.SetDialogNodes(StartetNode);
     }
 }

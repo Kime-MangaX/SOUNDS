@@ -1,17 +1,34 @@
 using UnityEngine;
+using System;
 
 public class Sanidad : MonoBehaviour
 {
     public Karma karma;
 
+
+    public int Karma = 0;
     public int sanityPlayer = 30;
+
+
+
     public int sanityMax = 60;
     public int sanityMin = 0;
 
+    public static Action<int, int> OnStatsChange;
 
+
+    private void OnEnable()
+    {
+        OnStatsChange += SetStats;
+    }
     void Start()
     {
         
+    }
+    public void SetStats(int sanity,int karma)
+    {
+        sanityPlayer += sanity;
+        Karma += karma;
     }
 
     public void ReduxSanity (int cantidad)

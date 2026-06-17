@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC5
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014\xBFEres un Shinseina Hari? \xBFTienes trabajo cerca?"
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014Eso no le incumbe. Salga."
+    NextNode: {fileID: 11400000, guid: 2a70179d441422041bc80947ed68c02b, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014[Ignorar]"
+    NextNode: {fileID: 11400000, guid: 6f7eb2346f4941441961e2e840d8c690, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014S\xED, con permiso."
+    NextNode: {fileID: 11400000, guid: 62090facbcb82e444a3c47a9efb8c011, type: 2}

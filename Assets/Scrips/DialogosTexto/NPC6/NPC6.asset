@@ -12,5 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC6
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014Quiero pedirles un trabajo\u2026 \xBFCon qui\xE9n de ustedes hago
+    el trato?"
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014[Ignorar] "
+    NextNode: {fileID: 11400000, guid: a2586e285fac5b345b746e360ea817f6, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014Estoy ocupada."
+    NextNode: {fileID: 11400000, guid: bb4496b43b47b034a8691fb51c42c1ef, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014Vaya a la aldea que conecta este camino y pregunte por Lukyan.
+      Con permiso."
+    NextNode: {fileID: 11400000, guid: 092ed389567a3044f99953e4070d0bd9, type: 2}

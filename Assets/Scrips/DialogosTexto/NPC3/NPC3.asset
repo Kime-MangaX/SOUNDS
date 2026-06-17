@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC3
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014Disculpa\u2026 \xBFno habr\xE1s visto a mi hermanito? Me distraje
+    un momento y ya no lo encuentro."
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014No me moleste."
+    NextNode: {fileID: 11400000, guid: 4dbadfdf6a1f76f4e93c334573a661b6, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014[Ignorar]"
+    NextNode: {fileID: 11400000, guid: 873c56b5773c0024585c8c3f077bb3ba, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014Sigue de frente, creo que est\xE1 sentado en una piedra"
+    NextNode: {fileID: 11400000, guid: 47ff430bd60816545bb19f5edadc24e0, type: 2}

@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC1
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014Qu\xE9 clima m\xE1s feo\u2026 parece que va a llover pronto. \xBFVas
+    muy lejos, joven? No vaya a ser que te agarre la lluvia."
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014No es de su incumbencia. Qu\xEDtese."
+    NextNode: {fileID: 11400000, guid: a36482a8c1f832848996e32a676ff6d4, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014[Ignorar]"
+    NextNode: {fileID: 11400000, guid: 05fdc19f92348a7459f2a17a60df193b, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014Voy de paso, no se preocupe."
+    NextNode: {fileID: 11400000, guid: 1988bfca6ac549548bca6a3dfbe60f71, type: 2}

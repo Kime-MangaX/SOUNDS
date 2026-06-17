@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC2
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014Los deseos tienen poder, \xBFsab\xEDa? Hubo una vez una joven que
+    pidi\xF3 un deseo muy ego\xEDsta a la Gran Se\xF1ora\u2026"
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014No me interesa. Largo."
+    NextNode: {fileID: 11400000, guid: bbfd0627e3ca14940aa43b0da14d459f, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014Con permiso."
+    NextNode: {fileID: 11400000, guid: d14ff2d2a84c7a04b9a9c38d654ed437, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014\xBFQu\xE9 pidi\xF3?"
+    NextNode: {fileID: 11400000, guid: afd6149dbf8ce6d4e871ca37b3d02a1d, type: 2}

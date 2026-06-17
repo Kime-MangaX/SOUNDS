@@ -18,7 +18,7 @@ MonoBehaviour:
   m_TilingRules:
   - m_Id: 34
     m_Sprites:
-    - {fileID: 1075459624, guid: 9f494927de65c0f419906a72f254d79f, type: 3}
+    - {fileID: -6836301358900691809, guid: 6c94c3380c4d9c0488079627df51e08c, type: 3}
     - {fileID: -1053618634, guid: 9f494927de65c0f419906a72f254d79f, type: 3}
     - {fileID: 1172118386, guid: 9f494927de65c0f419906a72f254d79f, type: 3}
     m_GameObject: {fileID: 0}

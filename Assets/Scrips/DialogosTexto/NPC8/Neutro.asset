@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: Neutro
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
+  Dialogo: '*(La figura te observa en silencio y se desvanece)*'
   Options: []

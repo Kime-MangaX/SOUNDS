@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e17eca7417e134d99db4a0fa08b5db, type: 3}
   m_Name: NPC4
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
-  Dialogo: 
-  Options: []
+  Dialogo: "\u2014Hermosa se\xF1orita, \xBFno le interesa saber su futuro? \xA1Por
+    hoy es gratis!"
+  Options:
+  - KarmaValue: -5
+    SanidadValue: -5
+    OptionText: "\u2014Largo."
+    NextNode: {fileID: 11400000, guid: 145bca77120415b428525376ba193c91, type: 2}
+  - KarmaValue: 1
+    SanidadValue: 0
+    OptionText: "\u2014[Ignorar]"
+    NextNode: {fileID: 11400000, guid: 3b59962b6f2582f4080a2834512422ca, type: 2}
+  - KarmaValue: 3
+    SanidadValue: 5
+    OptionText: "\u2014\xBFQu\xE9 puedo perder?"
+    NextNode: {fileID: 11400000, guid: 7cf3ebc5df862d34baa0d041752a9cda, type: 2}
