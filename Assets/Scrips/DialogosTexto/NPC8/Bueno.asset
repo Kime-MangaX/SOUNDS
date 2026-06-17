@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Bueno
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: "\u2014\xBFNo lo recuerdas?\u2026 Bien. *(se da la vuelta)* Adi\xF3s."
+  KarmaValue: 3
+  SanidadValue: 5
   Options: []

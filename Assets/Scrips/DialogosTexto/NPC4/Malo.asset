@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Malo
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: "\u2014\xA1Qu\xE9 grosera!"
+  KarmaValue: -5
+  SanidadValue: -5
   Options: []

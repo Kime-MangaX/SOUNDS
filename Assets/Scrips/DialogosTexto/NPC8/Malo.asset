@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Malo
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: "\u2014T\xFA tienes la culpa. *(susurra con rencor)*"
+  KarmaValue: -5
+  SanidadValue: -5
   Options: []

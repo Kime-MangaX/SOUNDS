@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Neutro
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: '*(La adivina encoge los hombros y busca a otro cliente)*'
+  KarmaValue: 1
+  SanidadValue: 0
   Options: []

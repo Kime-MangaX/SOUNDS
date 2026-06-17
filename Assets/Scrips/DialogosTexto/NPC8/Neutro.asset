@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Neutro
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: '*(La figura te observa en silencio y se desvanece)*'
+  KarmaValue: 1
+  SanidadValue: 0
   Options: []

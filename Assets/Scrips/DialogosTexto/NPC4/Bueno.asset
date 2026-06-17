@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Bueno
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: "*(Muestra las cartas)* \u2014Escoja una."
+  KarmaValue: 3
+  SanidadValue: 5
   Options: []

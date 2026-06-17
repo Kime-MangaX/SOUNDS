@@ -5,7 +5,7 @@ public class Karma : MonoBehaviour
 
 
     public int accionesBuenas = 3;
-    public int accionesNeutras = 2;
+    public int accionesNeutras = 1;
     public int accionesMalas = -5;
 
     public int karmaPlayer = 30;
