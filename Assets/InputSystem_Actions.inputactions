@@ -997,15 +997,6 @@
             "id": "ea0a95df-f46c-41c4-bbca-c12f5fdbc033",
             "actions": [
                 {
-                    "name": "Movimiento",
-                    "type": "Button",
-                    "id": "705d5ec4-0e81-4e9a-8bb7-042d5bdbac0f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interacción",
                     "type": "Button",
                     "id": "36f40016-5047-4609-b4ef-cd000ef0f1a5",
@@ -1016,83 +1007,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "d854514d-3b0b-441a-a6ae-cc5eee6c2318",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb2259d4-f648-4b59-928d-9dd3c1874b29",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ab0dc7ae-1e91-45b5-b915-efd4168b49a1",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fdfdc167-3bdb-4c21-8d09-2abe6f43a81e",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse;Gamepad",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "04082298-dfea-4bcf-93e1-00e7e599d83c",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "af5e121d-8bea-4ace-ac09-e5704baa9f61",
-                    "path": "<Keyboard>/ctrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e41dd513-d7e7-4b58-8b23-577cee46f7e0",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "d12c4f8d-e03e-4407-9781-95508b9f575b",
