@@ -18,7 +18,7 @@ MonoBehaviour:
   - KarmaValue: -5
     SanidadValue: -5
     OptionText: "\u2014No es de su incumbencia. Qu\xEDtese."
-    NextNode: {fileID: 11400000, guid: a36482a8c1f832848996e32a676ff6d4, type: 2}
+    NextNode: {fileID: 11400000, guid: c24eb0ac7b43706408381f90c6aac42b, type: 2}
   - KarmaValue: 1
     SanidadValue: 0
     OptionText: "\u2014[Ignorar]"
@@ -26,4 +26,4 @@ MonoBehaviour:
   - KarmaValue: 3
     SanidadValue: 5
     OptionText: "\u2014Voy de paso, no se preocupe."
-    NextNode: {fileID: 11400000, guid: 1988bfca6ac549548bca6a3dfbe60f71, type: 2}
+    NextNode: {fileID: 11400000, guid: 5fa993fdd25f31c4ba2c79292d4e58fe, type: 2}
