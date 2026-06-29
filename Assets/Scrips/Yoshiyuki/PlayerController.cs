@@ -18,11 +18,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private bool estaEnSuelo;
     private bool puedeDoubleSalto;
+    private float moveX;
+    private float velocidadActual;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         rb.freezeRotation = true;
     }
 
@@ -30,30 +31,27 @@ public class PlayerController : MonoBehaviour
     {
         rb.rotation = 0f;
 
-        Mover();
-        Saltar();
-    }
-
-    void Mover()
-    {
-        float moveX = 0f;
-
+        // Leer input
+        moveX = 0f;
         if (Input.GetKey(KeyCode.A)) moveX = -1f;
         if (Input.GetKey(KeyCode.D)) moveX = 1f;
 
-        // Shift para correr
-        float velocidadActual = Input.GetKey(KeyCode.LeftShift) ? velocidadCorrer : velocidad;
+        velocidadActual = Input.GetKey(KeyCode.LeftShift) ? velocidadCorrer : velocidad;
 
-        rb.linearVelocity = new Vector2(moveX * velocidadActual, rb.linearVelocity.y);
-
-        // Voltear sprite según dirección
+        // Voltear sprite
         if (moveX != 0)
             transform.localScale = new Vector3(moveX > 0 ? 1 : -1, 1, 1);
+
+        Saltar();
+    }
+
+    void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(moveX * velocidadActual, rb.linearVelocity.y);
     }
 
     void Saltar()
     {
-        // Detectar si está en el suelo
         estaEnSuelo = Physics2D.OverlapCircle(puntoSuelo.position, radioSuelo, capaSuelo);
 
         if (estaEnSuelo)
@@ -63,19 +61,16 @@ public class PlayerController : MonoBehaviour
         {
             if (estaEnSuelo)
             {
-                // Salto normal
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
             }
             else if (puedeDoubleSalto)
             {
-                // Doble salto
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
                 puedeDoubleSalto = false;
             }
         }
     }
 
-    // Visualizar el punto de suelo en el editor
     void OnDrawGizmosSelected()
     {
         if (puntoSuelo != null)
