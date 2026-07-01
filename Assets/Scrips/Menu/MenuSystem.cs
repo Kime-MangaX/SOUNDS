@@ -12,6 +12,7 @@ public class MenuSystem
 
     public void Salir()
     {
+        Debug.Log("Saliendo del Juego...");
         Application.Quit();
     }
 }
