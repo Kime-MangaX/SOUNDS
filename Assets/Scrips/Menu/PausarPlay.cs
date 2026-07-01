@@ -23,17 +23,21 @@ public class PausarPlay : MonoBehaviour
         }
     }
 
-    public void Pausar()
-    {
-        menuPausa.SetActive(true);
-        Time.timeScale = 0;
-        juegopausado = true;
-    }
-
     public void Reanudar()
     {
         menuPausa.SetActive(false);
         Time.timeScale = 1;
         juegopausado = false;
+        Debug.Log("Esto debe regresar por favor ahhhhhhhhhhhhhhhh...");
     }
+
+    public void Pausar()
+    {
+        menuPausa.SetActive(true);
+        Time.timeScale = 0;
+        juegopausado = true;
+        Debug.Log("Esto debe Pausar Todo");
+    }
+
+
 }
