@@ -11,17 +11,23 @@ public class PausarPlay : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(juegopausado)
-            {
-                Reanudar();
-            }
+            TestPause();
         }
 
-        else
+    }
+
+    public void TestPause()
+    {
+       if( juegopausado)
+        {
+            Reanudar();
+        }
+       else
         {
             Pausar();
         }
     }
+
 
     public void Reanudar()
     {

@@ -13,6 +13,8 @@ public class DialogManagerUI : MonoBehaviour
     public List<DIalogUI> options;
     public DIalogUI OptionPrefab;
 
+    
+
     [Header("Portrait")]
     public Image PortraitImage;
     public GameObject PortraitPanel;
