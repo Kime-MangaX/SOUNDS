@@ -15,4 +15,5 @@ MonoBehaviour:
   Dialogo: '*(El anciano suspira y sigue su camino)*
 
 '
+  PortraitInicial: {fileID: -6393659987117582478, guid: 844c55edd4ea07042b92e440356d341c, type: 3}
   Options: []

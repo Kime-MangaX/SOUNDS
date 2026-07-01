@@ -7,6 +7,7 @@ public class DialogNode : ScriptableObject
 {
     [TextArea(3, 10)]
     public string Dialogo;
+    public Sprite PortraitInicial;
     public List<DialogOption> Options = new();
 }
 
@@ -16,5 +17,6 @@ public struct DialogOption
     public int KarmaValue;
     public int SanidadValue;
     public string OptionText;
+    public Sprite PortraitAlElegir;
     public DialogNode NextNode;
 }

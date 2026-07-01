@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Malo
   m_EditorClassIdentifier: Assembly-CSharp::DialogNode
   Dialogo: "\u2014\xA1Qu\xE9 grosera! *(se aparta ofendido)*"
+  PortraitInicial: {fileID: 4633132488524223009, guid: fd6652cc577f05a428dcba537f6a05c1, type: 3}
   Options: []

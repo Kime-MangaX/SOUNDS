@@ -13,24 +13,30 @@ public class DialogManagerUI : MonoBehaviour
     public List<DIalogUI> options;
     public DIalogUI OptionPrefab;
 
+    [Header("Portrait")]
+    public Image PortraitImage;
+    public GameObject PortraitPanel;
+
     void Start()
     {
         TextPanel.SetActive(false);
+        PortraitPanel.SetActive(false);
     }
 
     [Button("Set Dialog Nodes")]
     public void SetDialogNodes(DialogNode node)
     {
-        // Protección por si el nodo es null
         if (node == null)
         {
-            Debug.LogWarning("El nodo es null, cerrando dialogo.");
             ResetDialogs();
             return;
         }
 
         TextPanel.SetActive(true);
         Text.text = node.Dialogo;
+
+        MostrarPortrait(node.PortraitInicial);
+
         ResetList();
 
         if (node.Options.Count <= 0)
@@ -47,31 +53,47 @@ public class DialogManagerUI : MonoBehaviour
             options.Add(dialogUI);
             dialogUI.Set(node.Options[index].OptionText);
 
-            // Protección: verificar que NextNode no sea null
             if (node.Options[index].NextNode != null)
             {
                 dialogUI.Option.onClick.AddListener(() =>
                 {
-                    // Aplicar karma y sanidad AL ELEGIR la opción
+                    MostrarPortrait(node.Options[index].PortraitAlElegir);
+
                     Sanidad.OnStatsChange?.Invoke(
                         node.Options[index].KarmaValue,
                         node.Options[index].SanidadValue
                     );
+
                     SetDialogNodes(node.Options[index].NextNode);
                 });
             }
             else
             {
-                // Si no hay siguiente nodo, cerrar el dialogo al elegir
                 dialogUI.Option.onClick.AddListener(() =>
                 {
+                    MostrarPortrait(node.Options[index].PortraitAlElegir);
+
                     Sanidad.OnStatsChange?.Invoke(
                         node.Options[index].KarmaValue,
                         node.Options[index].SanidadValue
                     );
-                    ResetDialogs();
+
+                    Invoke(nameof(ResetDialogs), 1.5f);
                 });
             }
+        }
+    }
+
+    void MostrarPortrait(Sprite sprite)
+    {
+        if (sprite != null)
+        {
+            PortraitImage.sprite = sprite;
+            PortraitPanel.SetActive(true);
+        }
+        else
+        {
+            PortraitPanel.SetActive(false);
         }
     }
 
@@ -80,14 +102,13 @@ public class DialogManagerUI : MonoBehaviour
         Text.text = "";
         ResetList();
         TextPanel.SetActive(false);
+        PortraitPanel.SetActive(false);
     }
 
     public void ResetList()
     {
         foreach (var option in options)
-        {
             Destroy(option.gameObject);
-        }
         options.Clear();
     }
 }
