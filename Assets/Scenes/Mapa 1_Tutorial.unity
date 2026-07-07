@@ -30214,6 +30214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593589a0a88c6364fab1bf2db9fe79c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  karma: 0
+  sanidad: 100
   velocidad: 5
   velocidadCorrer: 15
   fuerzaSalto: 12
@@ -30222,6 +30224,12 @@ MonoBehaviour:
   capaSuelo:
     serializedVersion: 2
     m_Bits: 64
+  fuerzaDash: 15
+  duracionDash: 0.2
+  cooldownDash: 1
+  "da\xF1oPorTrampa": 10
+  "intervalosDa\xF1o": 1
+  limiteCaidaY: -15
 --- !u!58 &942233294
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32134,8 +32142,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2094957832}
   - component: {fileID: 2094957831}
+  - component: {fileID: 2094957833}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32253,6 +32262,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094957833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094957830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df78e6beae735c4a989fcd4c26be690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  sonidoDerrota: {fileID: 0}
+  sonidoSaltar: {fileID: 8300000, guid: d23c944e429544d449df61865d87fe59, type: 3}
+  sonidoCorrer: {fileID: 8300000, guid: 6a94749e9b5f9774b88c662a0fd7c365, type: 3}
+  sonidoCaminar: {fileID: 8300000, guid: e24608c19396c8849aefc15627010650, type: 3}
+  sonidoInteractuar: {fileID: 8300000, guid: f1faf1cc9d379114b854368ba6b623a5, type: 3}
 --- !u!1 &2104095634
 GameObject:
   m_ObjectHideFlags: 0

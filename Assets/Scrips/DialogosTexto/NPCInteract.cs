@@ -13,6 +13,7 @@ public class NPCInteract : MonoBehaviour, IInteractuable
 
     public void Interactuar()
     {
+        SoundManager.Instance.PlayInteractuar();
         dialogManager.SetDialogNodes(firstNode);
     }
 

@@ -1,6 +1,4 @@
-using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerController : Entidad
@@ -13,6 +11,9 @@ public class PlayerController : Entidad
     private bool puedeDash = true;
     private float moveX;
     private float velocidadActual;
+    private float timerDaño = 0f;
+    private bool estaEnTrampa = false;
+    private bool estaMuerto = false;
 
     [Header("Movimiento")]
     public float velocidad = 5f;
@@ -29,6 +30,11 @@ public class PlayerController : Entidad
     public float duracionDash = 0.2f;
     public float cooldownDash = 1f;
 
+    [Header("Daño")]
+    public int dañoPorTrampa = 10;
+    public float intervalosDaño = 1f;
+    public float limiteCaidaY = -10f;
+
 
 
     void Start()
@@ -40,7 +46,27 @@ public class PlayerController : Entidad
 
     void Update()
     {
+        if (estaMuerto) return;
+
         rb.rotation = 0f;
+
+        // Verificar caída al vacío
+        if (transform.position.y < limiteCaidaY)
+        {
+            OnMuerte();
+            return;
+        }
+
+        // Daño por trampa cada X segundos
+        if (estaEnTrampa)
+        {
+            timerDaño -= Time.deltaTime;
+            if (timerDaño <= 0f)
+            {
+                RecibirDaño(dañoPorTrampa);
+                timerDaño = intervalosDaño;
+            }
+        }
 
         if (estaDashing) return;
 
@@ -51,7 +77,14 @@ public class PlayerController : Entidad
         velocidadActual = Input.GetKey(KeyCode.LeftShift) ? velocidadCorrer : velocidad;
 
         if (moveX != 0)
+        {
             transform.localScale = new Vector3(moveX > 0 ? 1 : -1, 1, 1);
+            SoundManager.Instance.PlayPasos(Input.GetKey(KeyCode.LeftShift));
+        }
+        else
+        {
+            SoundManager.Instance.StopPasos();
+        }
 
         anim.SetFloat("Movimiento", Mathf.Abs(moveX), 0.1f, Time.deltaTime);
 
@@ -63,6 +96,8 @@ public class PlayerController : Entidad
 
     void FixedUpdate()
     {
+        if (estaMuerto) return;
+
         if (!estaDashing)
             rb.linearVelocity = new Vector2(moveX * velocidadActual, rb.linearVelocity.y);
     }
@@ -80,11 +115,13 @@ public class PlayerController : Entidad
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
                 anim.SetTrigger("Saltar");
+                SoundManager.Instance.PlaySaltar();
             }
             else if (puedeDoubleSalto)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
                 anim.SetTrigger("Saltar");
+                SoundManager.Instance.PlaySaltar();
                 puedeDoubleSalto = false;
             }
         }
@@ -107,6 +144,21 @@ public class PlayerController : Entidad
         puedeDash = true;
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Trampa"))
+        {
+            estaEnTrampa = true;
+            timerDaño = 0f;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Trampa"))
+            estaEnTrampa = false;
+    }
+
     protected override void OnStatsModificados()
     {
         Debug.Log($"Player - Karma: {karma} | Sanidad: {sanidad}");
@@ -114,8 +166,27 @@ public class PlayerController : Entidad
 
     protected override void OnMuerte()
     {
-        Debug.Log("Player muerto");
-        // Aquí después conectamos con escena de Derrota
+        if (estaMuerto) return;
+        estaMuerto = true;
+
+        Entidad.OnEntidadMuerta?.Invoke(this);
+        SoundManager.Instance.PlayDerrota();
+        SoundManager.Instance.StopPasos();
+
+        // Congelar player sin desactivar el GameObject
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0f;
+        GetComponent<Collider2D>().enabled = false;
+        enabled = false;
+
+        // Coroutine desde SoundManager que sigue activo
+        SoundManager.Instance.StartCoroutine(CargarDerrota());
+    }
+
+    System.Collections.IEnumerator CargarDerrota()
+    {
+        yield return new WaitForSeconds(1.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Derrota");
     }
 
     void OnDrawGizmosSelected()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Entidad : MonoBehaviour, IStats, IDañable
@@ -5,6 +6,9 @@ public abstract class Entidad : MonoBehaviour, IStats, IDañable
     [Header("Stats Base")]
     [SerializeField] protected int karma = 0;
     [SerializeField] protected int sanidad = 100;
+
+    // ✅ Action 2 - evento de muerte
+    public static Action<Entidad> OnEntidadMuerta;
 
     public int Karma => karma;
     public int Sanidad => sanidad;

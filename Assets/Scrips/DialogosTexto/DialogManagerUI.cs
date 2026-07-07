@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -26,57 +27,62 @@ public class DialogManagerUI : MonoBehaviour
     [Button("Set Dialog Nodes")]
     public void SetDialogNodes(DialogNode node)
     {
-        if (node == null)
+        try
         {
+            if (node == null)
+                throw new Exception("El DialogNode es null");
+
+            TextPanel.SetActive(true);
+            Text.text = node.Dialogo;
+
+            MostrarPortrait(node.PortraitInicial);
+
+            ResetList();
+
+            if (node.Options.Count <= 0)
+            {
+                Debug.Log("No options Available");
+                Invoke(nameof(ResetDialogs), 4);
+                return;
+            }
+
+            for (int i = 0; i < node.Options.Count; i++)
+            {
+                int index = i;
+                DIalogUI dialogUI = Instantiate(OptionPrefab, OptionsParent);
+                options.Add(dialogUI);
+                dialogUI.Set(node.Options[index].OptionText);
+
+                if (node.Options[index].NextNode != null)
+                {
+                    dialogUI.Option.onClick.AddListener(() =>
+                    {
+                        MostrarPortrait(node.Options[index].PortraitAlElegir);
+                        Sanidad.OnStatsChange?.Invoke(
+                            node.Options[index].KarmaValue,
+                            node.Options[index].SanidadValue
+                        );
+                        SetDialogNodes(node.Options[index].NextNode);
+                    });
+                }
+                else
+                {
+                    dialogUI.Option.onClick.AddListener(() =>
+                    {
+                        MostrarPortrait(node.Options[index].PortraitAlElegir);
+                        Sanidad.OnStatsChange?.Invoke(
+                            node.Options[index].KarmaValue,
+                            node.Options[index].SanidadValue
+                        );
+                        Invoke(nameof(ResetDialogs), 1.5f);
+                    });
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error al cargar DialogNode: {e.Message}");
             ResetDialogs();
-            return;
-        }
-
-        TextPanel.SetActive(true);
-        Text.text = node.Dialogo;
-
-        MostrarPortrait(node.PortraitInicial);
-
-        ResetList();
-
-        if (node.Options.Count <= 0)
-        {
-            Debug.Log("No options Available");
-            Invoke(nameof(ResetDialogs), 4);
-            return;
-        }
-
-        for (int i = 0; i < node.Options.Count; i++)
-        {
-            int index = i;
-            DIalogUI dialogUI = Instantiate(OptionPrefab, OptionsParent);
-            options.Add(dialogUI);
-            dialogUI.Set(node.Options[index].OptionText);
-
-            if (node.Options[index].NextNode != null)
-            {
-                dialogUI.Option.onClick.AddListener(() =>
-                {
-                    MostrarPortrait(node.Options[index].PortraitAlElegir);
-                    Sanidad.OnStatsChange?.Invoke(
-                        node.Options[index].KarmaValue,
-                        node.Options[index].SanidadValue
-                    );
-                    SetDialogNodes(node.Options[index].NextNode);
-                });
-            }
-            else
-            {
-                dialogUI.Option.onClick.AddListener(() =>
-                {
-                    MostrarPortrait(node.Options[index].PortraitAlElegir);
-                    Sanidad.OnStatsChange?.Invoke(
-                        node.Options[index].KarmaValue,
-                        node.Options[index].SanidadValue
-                    );
-                    Invoke(nameof(ResetDialogs), 1.5f);
-                });
-            }
         }
     }
 
