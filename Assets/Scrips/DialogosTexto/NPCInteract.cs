@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NPCInteract : MonoBehaviour
+public class NPCInteract : MonoBehaviour, IInteractuable
 {
     public DialogNode firstNode;
     public float rangoInteraccion = 2f;
@@ -8,6 +8,13 @@ public class NPCInteract : MonoBehaviour
     private DialogManagerUI dialogManager;
     private Transform player;
     private bool playerCerca = false;
+
+    public bool PuedeInteractuar => playerCerca;
+
+    public void Interactuar()
+    {
+        dialogManager.SetDialogNodes(firstNode);
+    }
 
     void Start()
     {
@@ -17,17 +24,13 @@ public class NPCInteract : MonoBehaviour
 
     void Update()
     {
-        // Verificar distancia al player
         float distancia = Vector2.Distance(transform.position, player.position);
         playerCerca = distancia <= rangoInteraccion;
 
         if (playerCerca && Input.GetKeyDown(KeyCode.E))
-        {
-            dialogManager.SetDialogNodes(firstNode);
-        }
+            Interactuar();
     }
 
-    // Visualizar el rango en el editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -13,8 +13,6 @@ public class DialogManagerUI : MonoBehaviour
     public List<DIalogUI> options;
     public DIalogUI OptionPrefab;
 
-    
-
     [Header("Portrait")]
     public Image PortraitImage;
     public GameObject PortraitPanel;
@@ -60,12 +58,10 @@ public class DialogManagerUI : MonoBehaviour
                 dialogUI.Option.onClick.AddListener(() =>
                 {
                     MostrarPortrait(node.Options[index].PortraitAlElegir);
-
                     Sanidad.OnStatsChange?.Invoke(
                         node.Options[index].KarmaValue,
                         node.Options[index].SanidadValue
                     );
-
                     SetDialogNodes(node.Options[index].NextNode);
                 });
             }
@@ -74,12 +70,10 @@ public class DialogManagerUI : MonoBehaviour
                 dialogUI.Option.onClick.AddListener(() =>
                 {
                     MostrarPortrait(node.Options[index].PortraitAlElegir);
-
                     Sanidad.OnStatsChange?.Invoke(
                         node.Options[index].KarmaValue,
                         node.Options[index].SanidadValue
                     );
-
                     Invoke(nameof(ResetDialogs), 1.5f);
                 });
             }
