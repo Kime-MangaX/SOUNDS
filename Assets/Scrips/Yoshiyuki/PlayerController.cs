@@ -185,7 +185,7 @@ public class PlayerController : Entidad
 
     System.Collections.IEnumerator CargarDerrota()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Derrota");
     }
 

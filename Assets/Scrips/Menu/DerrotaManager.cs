@@ -11,6 +11,6 @@ public class DerrotaManager : MonoBehaviour
 
     public void IrAlMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("TileScream");
     }
 }
