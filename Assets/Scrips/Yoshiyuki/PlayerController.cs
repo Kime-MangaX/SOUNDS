@@ -50,14 +50,13 @@ public class PlayerController : Entidad
 
         rb.rotation = 0f;
 
-        // Verificar caída al vacío
         if (transform.position.y < limiteCaidaY)
         {
             OnMuerte();
             return;
         }
 
-        // Daño por trampa cada X segundos
+ 
         if (estaEnTrampa)
         {
             timerDaño -= Time.deltaTime;
@@ -173,13 +172,11 @@ public class PlayerController : Entidad
         SoundManager.Instance.PlayDerrota();
         SoundManager.Instance.StopPasos();
 
-        // Congelar player sin desactivar el GameObject
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0f;
         GetComponent<Collider2D>().enabled = false;
         enabled = false;
 
-        // Coroutine desde SoundManager que sigue activo
         SoundManager.Instance.StartCoroutine(CargarDerrota());
     }
 
