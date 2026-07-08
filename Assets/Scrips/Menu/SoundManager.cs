@@ -12,11 +12,11 @@ public class SoundManager : MonoBehaviour
     public AudioClip sonidoInteractuar;
 
     private AudioSource audioSource;
-    private AudioSource audioSourceLoop; // Para caminar/correr en loop
+    private AudioSource audioSourceLoop; 
 
     void Awake()
     {
-        // Singleton para acceder desde cualquier script
+
         if (Instance == null)
         {
             Instance = this;
@@ -30,25 +30,24 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        // Dos AudioSource: uno para efectos, otro para pasos en loop
+
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSourceLoop = gameObject.AddComponent<AudioSource>();
         audioSourceLoop.loop = true;
     }
 
-    // Reproducir sonido una vez
     public void Play(AudioClip clip)
     {
         if (clip == null) return;
         audioSource.PlayOneShot(clip);
     }
 
-    // Sonidos específicos
+
     public void PlayDerrota() => Play(sonidoDerrota);
     public void PlaySaltar() => Play(sonidoSaltar);
     public void PlayInteractuar() => Play(sonidoInteractuar);
 
-    // Caminar y correr en loop
+
     public void PlayPasos(bool corriendo)
     {
         AudioClip clip = corriendo ? sonidoCorrer : sonidoCaminar;
